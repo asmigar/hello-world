@@ -1,8 +1,13 @@
-#!/usr/bin/python3
-import sys
+#!env/bin/python3
+from flask import Flask
+from markupsafe import escape
 
-if(len(sys.argv)>1):
-  name = sys.argv[1]
-  print("Hello, %s!" % name);
-else:
-  print("Hello, World!")
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World</p>"
+
+@app.route("/user/<name>")
+def hello(name):
+    return f"Hello, {escape(name)}!"
