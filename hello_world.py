@@ -8,9 +8,9 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World</p>"
 
-@app.route("/user/<name>")
-def hello(name):
-    return f"Hello, {escape(name)}!"
+@app.route("/user/<username>")
+def hello(username):
+    return f"Hello, {escape(username)}!"
 
 @app.route("/org/<org_name>")
 def hello_from_org(org_name):
