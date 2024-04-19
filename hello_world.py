@@ -16,3 +16,6 @@ def hello(name):
 def hello_from_org(org_name):
     return f"Hello World from {escape(org_name)}!"
 
+@app.route("/org/<org_name>/user/<username>")
+def hello_from_org_to_user(org_name, username):
+    return f"Hello {escape(username)} from {escape(org_name)}!"
